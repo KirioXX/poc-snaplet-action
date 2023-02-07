@@ -1,0 +1,15 @@
+name: "POC Snaplet Action"
+description: "Install Snaplet and dependencies"
+inputs:
+  pg_dump-version:
+    description: "Version of pg_dump that should be used"
+    required: false
+    default: 15
+  snaplet-version: # id of input
+    description: "Version of snaplet that should be used"
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - run: install.sh
+      shell: bash
